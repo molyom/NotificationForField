@@ -4,6 +4,7 @@
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="notificationMessage" display-name-key="Notification Text" description-key="Short text with notification to be displayed.  If empty nothing shows." of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="lookupFieldTocheck" display-name-key="Lookup Field name" description-key="Lookup Field Name" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="MessageToShow" display-name-key="Message To Show" description-key="Message To Show" of-type="SingleLine.Text" usage="input" required="false" />
     
     <resources>
       <code path="index.ts" order="2"/>

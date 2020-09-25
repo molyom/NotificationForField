@@ -8,6 +8,7 @@ export class NotificationPulsing implements ComponentFramework.StandardControl<I
 
 	private contextObj: ComponentFramework.Context<IInputs>;
 	private _LookupFieldName : string;
+	private _MessageToShow : string;
 	private accountId : string;
 	private _successCallback : any;
 	
@@ -58,6 +59,9 @@ export class NotificationPulsing implements ComponentFramework.StandardControl<I
 
 		 if (context.parameters.lookupFieldTocheck.raw != null){
 			 this._LookupFieldName = context.parameters.lookupFieldTocheck.raw
+		 }
+		  if (context.parameters.MessageToShow.raw != null){
+		 	this._MessageToShow = context.parameters.MessageToShow.raw
 		 }
 
 		// define standard control elements		
@@ -119,8 +123,8 @@ export class NotificationPulsing implements ComponentFramework.StandardControl<I
 	// //var recordUrl: string = url + "/api/data/v9.1/"+(<any>this.contextObj).page.entityTypeName+ "(" + (<any>this.contextObj).page.entityId + ")?$select=_"+ this._LookupFieldName+"_value";
 	 var recordUrl: string = url + "/api/data/v9.1/"+(<any>this.contextObj).page.entityTypeName+ "s(" + (<any>this.contextObj).page.entityId + ")?$select=_"+this._LookupFieldName+"_value";
 	// // https://alantrapre.crm4.dynamics.com/api/data/v9.1/pes_newmeetingnotes(c93e3040-d98d-ea11-a811-000d3a20ff86)?$select=_pes_accountmetid_value
-	 var _pes_accountmetid_value  = "";	
-	 var _pes_accountmetid_value_formatted ="";
+	//  var _pes_accountmetid_value  = "";	
+	//  var _pes_accountmetid_value_formatted ="";
 	 var req = new XMLHttpRequest();
 	 var self = this;
 	 req.open("GET",recordUrl , true);
@@ -135,13 +139,14 @@ export class NotificationPulsing implements ComponentFramework.StandardControl<I
 	 		if (this.status === 200) {
 	 			var result = JSON.parse(this.response);
 				 
-				 self._textAnchor.innerHTML = result["_pes_accountmetid_value@OData.Community.Display.V1.FormattedValue"] + "<br> Is PE type. click on Accountmet Filed to update PE preferences";
+				// self._textAnchor.innerHTML = result["_pes_accountmetid_value@OData.Community.Display.V1.FormattedValue"] + self._MessageToShow; // "<br> Is PE type. click on Accountmet Filed to update PE preferences";
+				 self._textAnchor.innerHTML = result["_"+self._LookupFieldName+"_value@OData.Community.Display.V1.FormattedValue"] + self._MessageToShow; // "<br> Is PE type. click on Accountmet Filed to update PE preferences";
 
 				
 			
-				 _pes_accountmetid_value = result["_pes_accountmetid_value"];
-				 _pes_accountmetid_value_formatted = result["_pes_accountmetid_value@OData.Community.Display.V1.FormattedValue"];
-	 			var _pes_accountmetid_value_lookuplogicalname = result["_pes_accountmetid_value@Microsoft.Dynamics.CRM.lookuplogicalname"];
+				//  _pes_accountmetid_value = result["_pes_accountmetid_value"];
+				//  _pes_accountmetid_value_formatted = result["_pes_accountmetid_value@OData.Community.Display.V1.FormattedValue"];
+	 			// var _pes_accountmetid_value_lookuplogicalname = result["_pes_accountmetid_value@Microsoft.Dynamics.CRM.lookuplogicalname"];
 
 	 		
 				

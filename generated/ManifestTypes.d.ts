@@ -6,6 +6,7 @@
 export interface IInputs {
     notificationMessage: ComponentFramework.PropertyTypes.StringProperty;
     lookupFieldTocheck: ComponentFramework.PropertyTypes.StringProperty;
+    MessageToShow: ComponentFramework.PropertyTypes.StringProperty;
 }
 export interface IOutputs {
     notificationMessage?: string;
