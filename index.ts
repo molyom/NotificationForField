@@ -104,7 +104,7 @@ export class NotificationPulsing implements ComponentFramework.StandardControl<I
 	public updateView(context: ComponentFramework.Context<IInputs>): void
 	{
 		
-		if( this._value == "" || this._value === null ){			
+		if( this._value === "" || this._value === null ){			
 			console.log("No value");
 			this._boxDiv.setAttribute("style", "visibility:hidden;");
 		}else{
