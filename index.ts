@@ -118,13 +118,10 @@ export class NotificationPulsing implements ComponentFramework.StandardControl<I
 		{
 
 	
-// this.contextObj.webAPI.retrieveRecord((<any>this.contextObj).page.entityTypeName, (<any>this.contextObj).page.entityId, "?$select=pes_accountmetid").then();
 	 var url = (<any>Xrm).Utility.getGlobalContext().getClientUrl();
 	// //var recordUrl: string = url + "/api/data/v9.1/"+(<any>this.contextObj).page.entityTypeName+ "(" + (<any>this.contextObj).page.entityId + ")?$select=_"+ this._LookupFieldName+"_value";
 	 var recordUrl: string = url + "/api/data/v9.1/"+(<any>this.contextObj).page.entityTypeName+ "s(" + (<any>this.contextObj).page.entityId + ")?$select=_"+this._LookupFieldName+"_value";
-	// // https://alantrapre.crm4.dynamics.com/api/data/v9.1/pes_newmeetingnotes(c93e3040-d98d-ea11-a811-000d3a20ff86)?$select=_pes_accountmetid_value
-	//  var _pes_accountmetid_value  = "";	
-	//  var _pes_accountmetid_value_formatted ="";
+	
 	 var req = new XMLHttpRequest();
 	 var self = this;
 	 req.open("GET",recordUrl , true);
