@@ -3,7 +3,7 @@
   width: 100%;
   height: auto;
   background: #329e00;
-  animation: mymove 10s infinite;
+ /* animation: mymove 10s infinite; */
 }
 
 .Molyom.PCFControls\.NotificationPulsing a {
@@ -37,6 +37,6 @@
 }
 
 .Molyom.PCFControls\.NotificationPulsing .pulse {
-  animation-name: pulse;
-  animation-duration: 1.8s;
+ /* animation-name: pulse;
+  animation-duration: 1.8s; */
 }

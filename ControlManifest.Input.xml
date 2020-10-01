@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="Molyom.PCFControls" constructor="NotificationPulsing" version="0.0.49" display-name-key="Notification (Pulsing)" description-key="Takes a notification (string) and then pulses it." control-type="standard">
+  <control namespace="Molyom.PCFControls" constructor="NotificationPulsing" version="0.0.50" display-name-key="Notification (Pulsing)" description-key="Takes a notification (string) and then pulses it." control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="notificationMessage" display-name-key="Notification Text" description-key="Short text with notification to be displayed.  If empty nothing shows." of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="lookupFieldTocheck" display-name-key="Lookup Field name" description-key="Lookup Field Name" of-type="SingleLine.Text" usage="input" required="false" />
